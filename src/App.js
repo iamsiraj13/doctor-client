@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Appoinment from "./pages/appoinment/appoinmentMain/Appoinment";
+import Dashboard from "./pages/dashboard/dashboard/Dashboard";
 import Home from "./pages/home/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/login/Register";
@@ -26,6 +27,9 @@ const App = () => {
           <Route path="/register">
             <Register />
           </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
         </Switch>
       </Router>
     </AuthProvider>

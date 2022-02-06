@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Grid from '@mui/material/Grid';
 import Booking from "../booking/Booking";
-import {Alert, Container, Typography} from "@mui/material";
-import { ToastContainer, toast } from 'react-toastify';
+import {Alert, Container, Typography} from "@mui/material"; 
 
 const bookings = [
   {
@@ -58,8 +57,7 @@ const AvailableAppoinments = ({ date }) => {
         {
             bookings.map(booking=><Booking setBookingSuccess={setBookingSuccess} date={date} key={booking.id} booking={booking}/>)
         }
-      </Grid>
-      <ToastContainer />
+      </Grid> 
     </Container>
   );
 };
