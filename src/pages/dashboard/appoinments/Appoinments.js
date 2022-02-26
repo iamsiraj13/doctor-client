@@ -11,14 +11,18 @@ import { Typography } from "@mui/material";
  
 
 const Appoinments = ({date}) => {
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const [appoitments, setAppointments] = useState([]);
 
   useEffect(() => {
-      fetch(`http://localhost:5000/appointments?email=${user.email}&date=${date}`)
+      fetch(`http://localhost:5000/appointments?email=${user.email}&date=${date}`,{
+        headers:{
+          'authorization': `Bearer ${token}`
+        }
+      })
       .then( res => res.json())
       .then( data => setAppointments(data))
-  }, [date]);
+  }, [date, user.email]);
   return (
     <>
       <Typography variant='h5'>All the Appointments:{appoitments.length}</Typography>

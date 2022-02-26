@@ -19,17 +19,12 @@ import { deepPurple } from "@mui/material/colors";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import DashboardHome from "../dashboardHome/DashboardHome";
-import {
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import MakeAdmin from "../makeAdmin/MakeAdmin";
 import AddDoctor from "../addDoctor/AddDoctor";
 import Payment from "../payment/Payment";
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import AdminRoute from '../../../adminRoute/AdminRoute';
 
 const drawerWidth = 240;
 
@@ -37,7 +32,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [date, setDate] = React.useState(new Date());
-  const { user } = useAuth();
+  const { user, admin } = useAuth();
   let { path, url } = useRouteMatch();
 
   const handleDrawerToggle = () => {
@@ -73,23 +68,36 @@ function Dashboard(props) {
             <ListItemText primary="Dashboard" />
           </ListItem>
         </Link>
-        <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none", color: "#222" }}>
-          <ListItem button>
-            <ListItemIcon>
-              <SupervisorAccountIcon />
-            </ListItemIcon>
-            <ListItemText primary="Make Admin" />
-          </ListItem>
-        </Link>
-        <Link to={`${url}/addDoctor`} style={{ textDecoration: "none", color: "#222" }}>
-          <ListItem button>
-            <ListItemIcon>
-              <BookmarkAddIcon />
-            </ListItemIcon>
-            <ListItemText primary="Add a Doctor" />
-          </ListItem>
-        </Link>
-        <Link to={`${url}/payment`} style={{ textDecoration: "none", color: "#222" }}>
+        {admin && (
+          <Box>
+            <Link
+              to={`${url}/makeAdmin`}
+              style={{ textDecoration: "none", color: "#222" }}
+            >
+              <ListItem button>
+                <ListItemIcon>
+                  <SupervisorAccountIcon />
+                </ListItemIcon>
+                <ListItemText primary="Make Admin" />
+              </ListItem>
+            </Link>
+            <Link
+              to={`${url}/addDoctor`}
+              style={{ textDecoration: "none", color: "#222" }}
+            >
+              <ListItem button>
+                <ListItemIcon>
+                  <BookmarkAddIcon />
+                </ListItemIcon>
+                <ListItemText primary="Add a Doctor" />
+              </ListItem>
+            </Link>
+          </Box>
+        )}
+        <Link
+          to={`${url}/payment`}
+          style={{ textDecoration: "none", color: "#222" }}
+        >
           <ListItem button>
             <ListItemIcon>
               <BookmarkAddIcon />
@@ -123,7 +131,7 @@ function Dashboard(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon /> 
           </IconButton>
           <Typography variant="h6" noWrap component="div">
             Dashboard
@@ -182,9 +190,9 @@ function Dashboard(props) {
           <Route exact path={path}>
             <DashboardHome date={date} setDate={setDate} />
           </Route>
-          <Route path={`${path}/makeAdmin`}>
+          <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin />
-          </Route>
+          </AdminRoute>
           <Route path={`${path}/addDoctor`}>
             <AddDoctor />
           </Route>

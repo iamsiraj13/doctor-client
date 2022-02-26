@@ -1,0 +1,50 @@
+.section_title{
+    margin-bottom: 60px;
+}
+.section_title h4{
+    color:#1CC7C1;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.section_title h2{
+    color:#292F45;
+    margin-top: 15px;
+    font-size: 40px;
+}
+.reviewtext{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding:10px 25px; 
+    word-spacing: 2px;
+}
+.reviewtext p{ 
+    color:#727079;
+    margin-bottom: 30px;
+    line-height:1.4;
+
+}
+.reviewer{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.reviewer img{
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.reviewer__info{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.reviewer__info h5{
+    color:#1CC7C1
+}
+.reviewer__info p{
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+
