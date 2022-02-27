@@ -5,6 +5,8 @@ import Schedule from '../schedule/Schedule';
 import Services from '../services/Services';
 import Footer from '../../shared/footer/footer'
 import Review from '../review/Review';
+import DentalAbout from '../dentalAbout/DentalAbout';
+import Article from '../article/Article';
 const Home = () => {
     return (
         <div>
@@ -12,7 +14,9 @@ const Home = () => {
             <Banner/>
             <Schedule/>
             <Services/>
+            <DentalAbout/>
             <Review/>
+            <Article/>
             <Footer/>
         </div>
     );
