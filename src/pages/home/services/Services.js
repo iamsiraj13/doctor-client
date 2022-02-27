@@ -7,6 +7,7 @@ import Service from "../service/Service";
 import fluoride from "../../../assets/images/fluoride.png";
 import cavity from "../../../assets/images/cavity.png";
 import whiteing from "../../../assets/images/whitening.png";
+import './Services.css';
 
 const services = [
   {
@@ -33,12 +34,10 @@ export default function Services() {
   return (
     <Box sx={{ flexGrow: 1, py:'50px' }}>
       <Container>
-          <Typography variant="h5" sx={{textAlign:'center',fontWeight:'400',textTransform:'uppercase' }}>
-              OUR SERVICES
-          </Typography>
-          <Typography variant="h4" sx={{textAlign:'center',fontWeight:400, textTransform:'uppercase', color:'info.main',mb:2, }}>
-            SERVICE we provided
-          </Typography>
+          <div className="service_title">
+            <h4>OUR SERVICES</h4>
+            <h2>Services We Provide</h2>
+          </div>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
