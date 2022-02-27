@@ -25,7 +25,11 @@
 .article__text h4{
     font-size: 18px;
     margin-bottom: 10px;
+    color:#3E3E40;
 }
 .article__text p{
     font-size: 16px;
+    line-height: 1.5;
+    word-spacing: 2px;
+    color:#B2B1B4;
 }
