@@ -54,7 +54,7 @@ const BookingModal = ({
       serviceName: name,
     };
     // send to server
-    fetch("http://localhost:5000/appointments", {
+    fetch("https://doctrosportals.herokuapp.com/appointments", {
       method: "POST",
       headers: {
         "content-type": "application/json",

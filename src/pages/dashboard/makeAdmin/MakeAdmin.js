@@ -17,7 +17,7 @@ const MakeAdmin = () => {
         if( !email){
            setError("Field must not be empty")
         }
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://doctrosportals.herokuapp.com/users/admin',{
             method:'PUT',
             headers:{
                 'authorization':`Bearer ${token}`,

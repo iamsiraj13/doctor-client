@@ -15,7 +15,7 @@ const Appoinments = ({date}) => {
   const [appoitments, setAppointments] = useState([]);
 
   useEffect(() => {
-      fetch(`http://localhost:5000/appointments?email=${user.email}&date=${date}`,{
+      fetch(`https://doctrosportals.herokuapp.com/appointments?email=${user.email}&date=${date}`,{
         headers:{
           'authorization': `Bearer ${token}`
         }
